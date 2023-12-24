@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+
+.theme-1 {
+  --backgrounds-1: hsl(222, 26%, 31%);
+  --backgrounds-2: hsl(223, 31%, 20%);
+  --backgrounds-3: hsl(224, 36%, 15%);
+
+  --keys-blue-1: hsl(225, 21%, 49%);
+  --keys-blue-2: hsl(225, 21%, 49%);
+  --keys-red-1: hsl(6, 63%, 50%);
+  --keys-red-2: hsl(6, 70%, 34%);
+  --keys-light-1: hsl(30, 25%, 89%);
+  --keys-light-2: hsl(28, 16%, 65%);
+
+  --text-1: hsl(221, 14%, 31%);
+  --text-2: hsl(0, 0%, 100%);
+}
+.theme-2 {
+  --backgrounds-1: hsl(0, 0%, 90%);
+  --backgrounds-2: hsl(0, 5%, 81%);
+  --backgrounds-3: hsl(0, 0%, 93%);
+
+  --keys-blue-1: hsl(185, 42%, 37%);
+  --keys-blue-2: hsl(185, 58%, 25%);
+  --keys-red-1: hsl(25, 98%, 40%);
+  --keys-red-2: hsl(25, 99%, 27%);
+  --keys-light-1: hsl(45, 7%, 89%);
+  --keys-light-2: hsl(35, 11%, 61%);
+
+  --text-1: hsl(60, 10%, 19%);
+  --text-2: hsl(60, 10%, 19%);
+  --text-3: white;
+}
+.theme-3 {
+  --backgrounds-1: hsl(268, 75%, 9%);
+  --backgrounds-2: hsl(268, 71%, 12%);
+  --backgrounds-3: hsl(224, 36%, 15%);
+
+  --keys-blue-1: hsl(281, 89%, 26%);
+  --keys-blue-2: hsl(285, 91%, 52%);
+  --keys-red-1: hsl(176, 100%, 44%);
+  --keys-red-2: hsl(177, 92%, 70%);
+  --keys-light-1: hsl(268, 47%, 21%);
+  --keys-light-2: hsl(290, 70%, 36%);
+
+  --text-2: hsl(52, 100%, 62%);
+  --text-1: hsl(52, 100%, 62%);
+}
+.theme-3 button {
+  border-color: var(--keys-light-1) !important;
+}
+.theme-3 .reset,
+.theme-3 .del {
+  border-color: var(--keys-light-2) !important;
+}
+.theme-3 .equal {
+  border-color: var(--keys-red-2) !important;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--text-2);
+  font-size: 32px;
+  transition: 0.3s ease;
+  background: var(--backgrounds-1);
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  min-height: 100vh;
+  position: relative;
+}
+.calc {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  max-width: 764px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 6px;
+}
+.calc .calc-buttons{
+  background: var(--backgrounds-2);
+  border-radius: 10px;
+}
+h2 {
+  font-size: 28px;
+}
+h5 {
+  text-transform: uppercase;
+}
+
+.calc .calc-head {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calc .calc-head .calc-theme {
+  display: flex;
+  align-items: flex-end;
+  font-size: 16px;
+  gap: 1.5rem;
+}
+.calc .calc-head .calc-theme .calc-theme-switch {
+  cursor: pointer;
+}
+.calc .calc-head .calc-theme .calc-theme-switch .spans {
+  display: flex;
+  justify-content: space-between;
+}
+.calc .calc-head .calc-theme .calc-theme-switch .calc-toggle {
+  border-radius: 15px;
+  width: 60px;
+  height: 24px;
+  background: var(--backgrounds-2);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.calc .calc-head .calc-theme .calc-theme-switch .toggle-circle {
+  background: #fff;
+  width: 18px;
+  position: absolute;
+  left: 4px;
+  right: 0px;
+  transition: 0.3s all ease;
+  background: var(--keys-red-1);
+  height: 18px;
+  border-radius: 50%;
+}
+.calc .calc-body .calc-screen {
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: right;
+  background: var(--backgrounds-2);
+  border-radius: 10px;
+  padding: 1rem;
+  height: 100px;
+}
+.calc .calc-body .calc-screen .previous-operand {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: var(--keys-blue-1);
+}
+.calc .calc-body .calc-screen .current-operand {
+  font-size: 40px;
+}
+.calc .calc-body .calc-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 1rem;
+}
+.calc .calc-body .calc-buttons button {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-1);
+  background: var(--keys-light-1);
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.calc .calc-body .calc-buttons .del,
+.calc .calc-body .calc-buttons .reset {
+  color: var(--text-3);
+  border-color: var(--backgrounds-1);
+  background: var(--keys-blue-1);
+  text-transform: uppercase;
+}
+.calc .calc-body .calc-buttons .equal {
+  background: var(--keys-red-1);
+  border-color: var(--keys-red-1);
+  color: var(--keys-light-1);
+  text-transform: uppercase;
+}
+.calc .calc-body .calc-buttons .reset {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.calc .calc-body .calc-buttons .equal {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
